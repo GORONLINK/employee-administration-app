@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <a class="btn-floating btn-large waves-effect waves-light green center" [routerLink]="['/employees/add']"><i class="material-icons">add</i></a>
+            <table>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Salary</th>
+                <tbody>
+                    <tr *ngFor="let employee of employees">
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.position }}</td>
+                        <td>{{ employee.office }}</td>
+                        <td>{{ employee.salary }}</td>
+                        <td>
+                            <a [routerLink]="['/employees/edit', employee._id]">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn waves-effect waves-light" type="submit" name="action" (click)="deleteEmployees(employee._id)">
+                                <i class="material-icons">delete</i>
+                            </button>                                                        
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
